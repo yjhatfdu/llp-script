@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+    "allowJs": true,
+    "lib": [
+      "es6"
+    ],
+    "moduleResolution": "classic"
+  },
+  "exclude": [
+    "node_modules",
+    "src/expression.spec.ts"
+  ],
+  "include": [
+    "src"
+  ]
+}

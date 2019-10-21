@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+llp-script
+<br>
+<br>
+arguments:<input type="text" id="args" placeholder="arguments eg. x,y,progress,channel" value="channel,progress">
+<br>
+<br>
+<textarea style="width: 300px;height: 300px" id="code" placeholder="script">
+    0.501466-1.246334*sin(channel*0.125*PI)*(0.5*progress+0.5)
+</textarea>
+<br>
+<button onclick="compile()">compile</button>
+<br>
+compiled js
+<br>
+<textarea id="compiled" style="width: 300px;height: 300px"></textarea>
+<br>
+arguments values
+<input type="text" id="values" placeholder="values for arguments 1,0.5" value="1,0.5">
+<br>
+<button onclick="evaluateFunc()">evaluate</button>
+<br>
+<input id="result">
+</body>
+<script src="dist/bundle.js"></script>
+<script>
+    var compiledFunc;
+    var build = require('/dist/expression').build;
+
+    function compile() {
+        var code = document.querySelector('#code').value;
+        var args = document.querySelector('#args').value.split(',');
+        try {
+            compiledFunc = build(code, ...args)
+        } catch (e) {
+            document.querySelector('#compiled').value = e.message;
+            return
+        }
+        document.querySelector('#compiled').value = compiledFunc.toString()
+    }
+
+    function evaluateFunc() {
+        if (compiledFunc) {
+            try {
+                let result = compiledFunc(...document.querySelector('#values').value.split(',').map(x => Number(x)));
+                document.querySelector('#result').value=result;
+            }catch (e) {
+                document.querySelector('#result').value=e.message
+            }
+        }
+    }
+</script>
+</html>
