@@ -24,7 +24,6 @@ jobs:
         npm test
         npm config set //registry.npmjs.org/:_authToken=$NODE_TOKEN
         npm version patch
-        git push
         npm publish || true
       env:
         CI: true
