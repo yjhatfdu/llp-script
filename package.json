@@ -15,7 +15,7 @@
   "scripts": {
     "test": "jest",
     "jison": "jison src/parser.y -o src/parser.js -m js&&echo 'module.exports=parser;' >> src/parser.js",
-    "build": "rm -rf dist && tsc --outdir dist --skipLibCheck && browserify -r ./dist/expression -o dist/bundle.js"
+    "build": "npm run jison&&rm -rf dist && tsc --outdir dist --skipLibCheck && browserify -r ./dist/expression -o dist/bundle.js"
   },
   "author": "",
   "license": "ISC",
