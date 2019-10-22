@@ -23,7 +23,6 @@ jobs:
         npm run build --if-present
         npm test
         npm config set //registry.npmjs.org/:_authToken=$NODE_TOKEN
-        npm version patch
         npm publish || true
       env:
         CI: true
