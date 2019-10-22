@@ -22,8 +22,6 @@ jobs:
         npm ci
         npm run build --if-present
         npm test
-        npm config set //registry.npmjs.org/:_authToken=$NODE_TOKEN
-        npm publish || true
       env:
         CI: true
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
