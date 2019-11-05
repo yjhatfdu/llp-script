@@ -26,6 +26,7 @@ test("undefined variable should fail", () => {
 
 test("if should parse", () => {
     build('if(1){return 1}');
+    build('if(1){return 1};return 1');
     build('if(1){return 1}else if(2){return 2}else{return 3}');
 });
 
@@ -35,4 +36,16 @@ test("functions not in whitelist should fail", () => {
 
 test("functions should work", () => {
     build('min(0,1)')
+});
+
+test("should build",()=>{
+    build(`let p;
+if (currentTime < 10000) {
+    p = progress;
+} else if (currentTime < 20000) {
+    p = progress * 2 - 1
+} else if (currentTime < 30000) {
+    p = progress * 3 - 2
+}
+return p`,'currentTime','progress')
 });
