@@ -84,8 +84,6 @@ statement
         {$$={type:'stmt',children:[$1]};}
         | 'ret' e
         {$$={type:'ret_stmt',children:[$2]};}
-        | if_block
-        {$$=$1;}
         ;
 
 
@@ -108,7 +106,13 @@ if_block
 statements
         : statement ';' statements
             {$$=$3;$$.children.unshift($1);}
+        | if_block statements
+            {$$=$2;$$.children.unshift($1);}
+        | if_block ';' statements
+            {$$=$3;$$.children.unshift($1);}
         | statement
+            {$$={type:'statements',children:[$1]};}
+        | if_block EOF
             {$$={type:'statements',children:[$1]};}
         | statement EOF
             {$$={type:'statements',children:[$1]};}

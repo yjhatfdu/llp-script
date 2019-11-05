@@ -1,11 +1,7 @@
 import {build} from "./expression";
 
 test("basic expression should parse", () => {
-    let result = build('0.501466-1.246334*sin(channel*0.125*PI)*(0.5*progress+0.5)', 'channel', 'progress');
-    expect(result.toString()).toBe(`function anonymous(__channel,__progress
-) {
-return 0.501466-1.246334*Math.sin(__channel*0.125*3.141592653589793)*(0.5*__progress+0.5);
-}`)
+    build('0.501466-1.246334*sin(channel*0.125*PI)*(0.5*progress+0.5)', 'channel', 'progress');
 });
 
 test("operators should parse", () => {
@@ -30,6 +26,7 @@ test("undefined variable should fail", () => {
 
 test("if should parse", () => {
     build('if(1){return 1}');
+    build('if(1){return 1};return 1');
     build('if(1){return 1}else if(2){return 2}else{return 3}');
 });
 
@@ -39,4 +36,16 @@ test("functions not in whitelist should fail", () => {
 
 test("functions should work", () => {
     build('min(0,1)')
+});
+
+test("should build",()=>{
+    build(`let p;
+if (currentTime < 10000) {
+    p = progress;
+} else if (currentTime < 20000) {
+    p = progress * 2 - 1
+} else if (currentTime < 30000) {
+    p = progress * 3 - 2
+}
+return p`,'currentTime','progress')
 });
