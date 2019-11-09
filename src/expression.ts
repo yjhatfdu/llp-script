@@ -2,9 +2,13 @@ import * as parser from './parser'
 
 const functionMap = {};
 
-export function build(exp, ...args: string[]) {
+export function build(exp: string, ...args: string[]) {
     let inArgs = [...args].map(arg => '__' + arg);
     let p: any = parser;
+    exp.trim();
+    if (exp[exp.length - 1] == ';') {
+        exp = exp.slice(0, exp.length - 1)
+    }
     let ast = p.parse(exp);
     // console.log(JSON.stringify(ast, null, 2));
     let code;
