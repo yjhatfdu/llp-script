@@ -1,129 +1,173 @@
 import * as parser from './parser'
 
-const functionMap = {};
-
-export function build(exp, ...args: string[]) {
+export function build(exp: string, ...args: string[]) {
     let inArgs = [...args].map(arg => '__' + arg);
     let p: any = parser;
+    exp.trim();
+    if (exp[exp.length - 1] == ';') {
+        exp = exp.slice(0, exp.length - 1)
+    }
     let ast = p.parse(exp);
     // console.log(JSON.stringify(ast, null, 2));
     let code;
     if (ast.children.length == 1 && ast.children[0].type == 'stmt') {
-        code = 'return ' + compile(ast, inArgs.slice())
+        code = 'return ' + compile(ast, new context(inArgs.slice(), []))
     } else {
-        code = compile(ast, inArgs.slice())
+        code = compile(ast, new context(inArgs.slice(), []))
     }
     inArgs.push(code);
     return new Function(...inArgs)
 }
 
-function compile(node, variableSet) {
+class context {
+    varSet = {};
+    funcSet = {};
+    parent: context;
+
+    constructor(varList, funcList) {
+        varList.forEach(v => this.varSet[v] = true);
+        funcList.forEach(v => this.funcSet[v] = true);
+    }
+
+    setVar(v) {
+        this.varSet[v] = true;
+    }
+
+    hasVar(v) {
+        return !!(this.varSet[v]) || (this.parent && this.parent.hasVar(v))
+    }
+
+    setFunc(v) {
+        this.funcSet[v] = true
+    }
+
+    hasFunc(v) {
+        return !!(this.funcSet[v]) || (this.parent && this.parent.hasFunc(v))
+    }
+
+    fork() {
+        let c = new context([], []);
+        c.parent = this;
+        return c
+    }
+}
+
+function compile(node, ctx: context) {
     switch (node.type) {
         case 'statements': {
-            return node.children.map(x => compile(x, variableSet)).join('\n')
+            return node.children.map(x => compile(x, ctx)).join('\n')
         }
         case 'stmt': {
-            return compile(node.children[0], variableSet) + ';'
+            if (node.children.length == 0) {
+                return ''
+            }
+            return compile(node.children[0], ctx) + ';'
         }
         case 'ret_stmt': {
-            return 'return ' + compile(node.children[0], variableSet) + ';'
+            return 'return ' + compile(node.children[0], ctx) + ';'
         }
         case 'block': {
-            return `{\n${compile(node.children[0], variableSet)}\n}`
+            return `{\n${compile(node.children[0], ctx.fork())}\n}`
         }
         case 'if': {
-            return `if(${compile(node.children[0], variableSet)})${compile(node.children[1], variableSet)}`
+            return `if(${compile(node.children[0], ctx)})${compile(node.children[1], ctx)}`
         }
         case 'if_else': {
-            return `if(${compile(node.children[0], variableSet)})${compile(node.children[1], variableSet)}else ${compile(node.children[2], variableSet)}`
+            return `if(${compile(node.children[0], ctx)})${compile(node.children[1], ctx)}else ${compile(node.children[2], ctx)}`
         }
         case 'declare': {
-            variableSet.push(node.name);
+            ctx.setVar(node.name);
             return `let ${node.name}`
         }
         case 'assign': {
-            if (!(variableSet.indexOf(node.name) >= 0)) {
+            if (!(ctx.hasVar(node.name))) {
                 throw new Error("undefined variable " + node.name)
             }
-            return `${node.name}=${compile(node.children[0], variableSet)}`
+            return `${node.name}=${compile(node.children[0], ctx)}`
         }
         case 'declare_assign': {
-            variableSet.push(node.name);
-            return `let ${node.name}=${compile(node.children[0], variableSet)}`
+            ctx.setVar(node.name);
+            return `let ${node.name}=${compile(node.children[0], ctx)}`
         }
         case 'func': {
             let f = Math[node.name];
             if (f) {
-                return 'Math.' + node.name + '(' + node.children.map(x => compile(x, variableSet)).join(',') + ')';
+                return 'Math.' + node.name + '(' + node.children.map(x => compile(x, ctx)).join(',') + ')';
             }
-            f = functionMap[node.name];
+            f = ctx.hasFunc('__' + node.name);
             if (!f) {
                 throw new Error("Not support function " + node.name)
             }
-            return f + '(' + compile(node.children.map(x => compile(x, variableSet)).join(','), variableSet) + ')';
+            return '__' + node.name + '(' + node.children.map(x => compile(x, ctx)).join(',') + ')';
         }
         case 'const': {
             return node.value.toString()
         }
         case 'plus': {
-            return compile(node.children[0], variableSet) + '+' + compile(node.children[1], variableSet)
+            return compile(node.children[0], ctx) + '+' + compile(node.children[1], ctx)
         }
         case 'minus': {
-            return compile(node.children[0], variableSet) + '-' + compile(node.children[1], variableSet)
+            return compile(node.children[0], ctx) + '-' + compile(node.children[1], ctx)
         }
         case 'mul': {
-            return compile(node.children[0], variableSet) + '*' + compile(node.children[1], variableSet)
+            return compile(node.children[0], ctx) + '*' + compile(node.children[1], ctx)
         }
         case 'div': {
-            return compile(node.children[0], variableSet) + '/' + compile(node.children[1], variableSet)
+            return compile(node.children[0], ctx) + '/' + compile(node.children[1], ctx)
         }
         case 'uminus': {
-            return '-' + compile(node.children[0], variableSet)
+            return '-' + compile(node.children[0], ctx)
         }
         case 'pow': {
-            return 'Math.pow(' + compile(node.children[0], variableSet) + ',' + compile(node.children[1], variableSet) + ')'
+            return 'Math.pow(' + compile(node.children[0], ctx) + ',' + compile(node.children[1], ctx) + ')'
         }
         case 'var': {
-            if (!(variableSet.indexOf(node.name) >= 0)) {
+            if (!ctx.hasVar(node.name)) {
                 throw new Error("undefined variable " + node.name)
             }
             return node.name
         }
         case 'lt': {
-            return `${compile(node.children[0], variableSet)}<${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}<${compile(node.children[1], ctx)}`
         }
         case 'lte': {
-            return `${compile(node.children[0], variableSet)}<=${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}<=${compile(node.children[1], ctx)}`
         }
         case 'gt': {
-            return `${compile(node.children[0], variableSet)}>${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}>${compile(node.children[1], ctx)}`
         }
         case 'gte': {
-            return `${compile(node.children[0], variableSet)}>=${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}>=${compile(node.children[1], ctx)}`
         }
         case 'eq': {
-            return `${compile(node.children[0], variableSet)}==${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}==${compile(node.children[1], ctx)}`
         }
         case 'neq': {
-            return `${compile(node.children[0], variableSet)}!==${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}!==${compile(node.children[1], ctx)}`
         }
         case 'and': {
-            return `${compile(node.children[0], variableSet)}&&${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}&&${compile(node.children[1], ctx)}`
         }
         case 'or': {
-            return `${compile(node.children[0], variableSet)}||${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}||${compile(node.children[1], ctx)}`
         }
         case 'not': {
-            return `!${compile(node.children[0], variableSet)}`
+            return `!${compile(node.children[0], ctx)}`
         }
         case 'tri': {
-            return `${compile(node.children[0], variableSet)}?${compile(node.children[1], variableSet)}:${compile(node.children[2], variableSet)}`
+            return `${compile(node.children[0], ctx)}?${compile(node.children[1], ctx)}:${compile(node.children[2], ctx)}`
         }
         case 'bracket': {
-            return `(${compile(node.children[0], variableSet)})`
+            return `(${compile(node.children[0], ctx)})`
         }
         case 'mod': {
-            return `${compile(node.children[0], variableSet)}%${compile(node.children[1], variableSet)}`
+            return `${compile(node.children[0], ctx)}%${compile(node.children[1], ctx)}`
+        }
+        case 'function': {
+            ctx.setFunc('__' + node.name);
+            let c = ctx.fork();
+            node.args.forEach(a => c.setVar('__' + a));
+            return `function __${node.name}(${node.args.map(a => '__' + a).join(',')})${compile(node.body, c)}`
         }
         default: {
             throw new Error("Not support node type " + node.type)

@@ -41,6 +41,9 @@
 "}"             return  '}'
 "true"          return  'true'
 "false"         return  'false'
+"function"      return  'func'
+
+
 
 [\w\d]+	{ return 'NAME'};
 <<EOF>>	return 'EOF';
@@ -69,6 +72,24 @@ expression    :
     {return $1;}
     ;
 
+function
+        : 'func' arg '(' func_arg_list ')' block
+           { $$={type:'function',args:$4,body:$6,name:$2};}
+        ;
+
+func_arg_list
+        : arg ',' func_arg_list
+            {$$=$3;$$.unshift($1);}
+        | arg
+            {$$=[$1];}
+        |
+            {$$=[];}
+        ;
+
+arg
+        :   NAME
+            {$$=yytext;}
+        ;
 
 arg_list
         :   e  ','  arg_list
@@ -84,8 +105,6 @@ statement
         {$$={type:'stmt',children:[$1]};}
         | 'ret' e
         {$$={type:'ret_stmt',children:[$2]};}
-        | if_block
-        {$$=$1;}
         ;
 
 
@@ -108,7 +127,19 @@ if_block
 statements
         : statement ';' statements
             {$$=$3;$$.children.unshift($1);}
+        | if_block statements
+            {$$=$2;$$.children.unshift($1);}
+        | if_block ';' statements
+            {$$=$3;$$.children.unshift($1);}
+        | function statements
+            {$$=$2;$$.children.unshift($1);}
         | statement
+            {$$={type:'statements',children:[$1]};}
+        | statement ';' EOF
+            {$$={type:'statements',children:[$1]};}
+        | if_block EOF
+            {$$={type:'statements',children:[$1]};}
+        | function EOF
             {$$={type:'statements',children:[$1]};}
         | statement EOF
             {$$={type:'statements',children:[$1]};}
