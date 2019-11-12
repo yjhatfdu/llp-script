@@ -74,12 +74,12 @@ require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c=
 */
 var parser = (function () {
     var o = function (k, v, o, l) { for (o = o || {}, l = k.length; l--; o[k[l]] = v)
-        ; return o; }, $V0 = [2, 17], $V1 = [1, 6], $V2 = [1, 7], $V3 = [1, 14], $V4 = [1, 17], $V5 = [1, 8], $V6 = [1, 9], $V7 = [1, 10], $V8 = [1, 12], $V9 = [1, 13], $Va = [1, 15], $Vb = [1, 16], $Vc = [1, 18], $Vd = [1, 12, 18, 19], $Ve = [1, 24], $Vf = [1, 25], $Vg = [1, 26], $Vh = [1, 27], $Vi = [1, 28], $Vj = [1, 29], $Vk = [1, 30], $Vl = [1, 31], $Vm = [1, 32], $Vn = [1, 33], $Vo = [1, 34], $Vp = [1, 35], $Vq = [1, 36], $Vr = [1, 37], $Vs = [1, 38], $Vt = [1, 7, 12, 16, 18, 19, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43], $Vu = [1, 7, 12, 16, 18, 19, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 45], $Vv = [2, 18], $Vw = [1, 7, 12, 16, 18, 19, 27, 28, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43], $Vx = [1, 7, 12, 16, 18, 19, 39, 41, 42, 43], $Vy = [2, 4], $Vz = [1, 7, 12, 16, 18, 19, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43], $VA = [1, 7, 12, 16, 18, 19, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43], $VB = [1, 7, 12, 16, 18, 19, 43], $VC = [1, 78], $VD = [1, 9, 12, 14, 15, 18, 19, 21, 22, 23, 24, 25, 26, 28, 40, 44];
+        ; return o; }, $V0 = [2, 25], $V1 = [1, 9], $V2 = [1, 16], $V3 = [1, 19], $V4 = [1, 7], $V5 = [1, 8], $V6 = [1, 10], $V7 = [1, 11], $V8 = [1, 12], $V9 = [1, 14], $Va = [1, 15], $Vb = [1, 17], $Vc = [1, 18], $Vd = [1, 20], $Ve = [1, 19, 23, 24], $Vf = [1, 28], $Vg = [1, 29], $Vh = [1, 30], $Vi = [1, 31], $Vj = [1, 32], $Vk = [1, 33], $Vl = [1, 34], $Vm = [1, 35], $Vn = [1, 36], $Vo = [1, 37], $Vp = [1, 38], $Vq = [1, 39], $Vr = [1, 40], $Vs = [1, 41], $Vt = [1, 42], $Vu = [1, 46], $Vv = [1, 10, 12, 19, 23, 24, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47], $Vw = [1, 10, 12, 19, 23, 24, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47, 49], $Vx = [2, 26], $Vy = [1, 10, 12, 19, 23, 24, 31, 32, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47], $Vz = [1, 10, 12, 19, 23, 24, 43, 45, 46, 47], $VA = [2, 9], $VB = [1, 10, 12, 19, 23, 24, 31, 32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47], $VC = [1, 10, 12, 19, 23, 24, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47], $VD = [2, 5], $VE = [1, 10, 12, 19, 23, 24, 47], $VF = [1, 88], $VG = [1, 6, 8, 13, 17, 19, 21, 23, 24, 26, 27, 28, 29, 30, 32, 44, 48];
     var parser = { trace: function trace() { },
         yy: {},
-        symbols_: { "error": 2, "expression": 3, "statements": 4, "arg_list": 5, "e": 6, ",": 7, "statement": 8, "ret": 9, "block": 10, "{": 11, "}": 12, "if_block": 13, "if": 14, "(": 15, ")": 16, "else": 17, ";": 18, "EOF": 19, "var": 20, "NAME": 21, "NUMBER": 22, "true": 23, "false": 24, "PI": 25, "E": 26, "+": 27, "-": 28, "*": 29, "/": 30, "%": 31, "^": 32, "gt": 33, "gte": 34, "lt": 35, "lte": 36, "eq": 37, "neq": 38, "and": 39, "not": 40, "or": 41, "?": 42, ":": 43, "let": 44, "=": 45, "$accept": 0, "$end": 1 },
-        terminals_: { 2: "error", 7: ",", 9: "ret", 11: "{", 12: "}", 14: "if", 15: "(", 16: ")", 17: "else", 18: ";", 19: "EOF", 21: "NAME", 22: "NUMBER", 23: "true", 24: "false", 25: "PI", 26: "E", 27: "+", 28: "-", 29: "*", 30: "/", 31: "%", 32: "^", 33: "gt", 34: "gte", 35: "lt", 36: "lte", 37: "eq", 38: "neq", 39: "and", 40: "not", 41: "or", 42: "?", 43: ":", 44: "let", 45: "=" },
-        productions_: [0, [3, 1], [5, 3], [5, 1], [5, 0], [8, 1], [8, 2], [10, 3], [13, 5], [13, 7], [13, 7], [4, 3], [4, 2], [4, 3], [4, 1], [4, 2], [4, 2], [4, 0], [20, 1], [6, 1], [6, 1], [6, 1], [6, 1], [6, 1], [6, 1], [6, 3], [6, 3], [6, 3], [6, 3], [6, 3], [6, 3], [6, 3], [6, 2], [6, 3], [6, 3], [6, 3], [6, 3], [6, 3], [6, 3], [6, 3], [6, 2], [6, 3], [6, 5], [6, 4], [6, 4], [6, 2], [6, 3]],
+        symbols_: { "error": 2, "expression": 3, "statements": 4, "function": 5, "func": 6, "arg": 7, "(": 8, "func_arg_list": 9, ")": 10, "block": 11, ",": 12, "NAME": 13, "arg_list": 14, "e": 15, "statement": 16, "ret": 17, "{": 18, "}": 19, "if_block": 20, "if": 21, "else": 22, ";": 23, "EOF": 24, "var": 25, "NUMBER": 26, "true": 27, "false": 28, "PI": 29, "E": 30, "+": 31, "-": 32, "*": 33, "/": 34, "%": 35, "^": 36, "gt": 37, "gte": 38, "lt": 39, "lte": 40, "eq": 41, "neq": 42, "and": 43, "not": 44, "or": 45, "?": 46, ":": 47, "let": 48, "=": 49, "$accept": 0, "$end": 1 },
+        terminals_: { 2: "error", 6: "func", 8: "(", 10: ")", 12: ",", 13: "NAME", 17: "ret", 18: "{", 19: "}", 21: "if", 22: "else", 23: ";", 24: "EOF", 26: "NUMBER", 27: "true", 28: "false", 29: "PI", 30: "E", 31: "+", 32: "-", 33: "*", 34: "/", 35: "%", 36: "^", 37: "gt", 38: "gte", 39: "lt", 40: "lte", 41: "eq", 42: "neq", 43: "and", 44: "not", 45: "or", 46: "?", 47: ":", 48: "let", 49: "=" },
+        productions_: [0, [3, 1], [5, 6], [9, 3], [9, 1], [9, 0], [7, 1], [14, 3], [14, 1], [14, 0], [16, 1], [16, 2], [11, 3], [20, 5], [20, 7], [20, 7], [4, 3], [4, 2], [4, 3], [4, 2], [4, 1], [4, 3], [4, 2], [4, 2], [4, 2], [4, 0], [25, 1], [15, 1], [15, 1], [15, 1], [15, 1], [15, 1], [15, 1], [15, 3], [15, 3], [15, 3], [15, 3], [15, 3], [15, 3], [15, 3], [15, 2], [15, 3], [15, 3], [15, 3], [15, 3], [15, 3], [15, 3], [15, 3], [15, 2], [15, 3], [15, 5], [15, 4], [15, 4], [15, 2], [15, 3]],
         performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
             /* this == yyval */
             var $0 = $$.length - 1;
@@ -88,141 +88,158 @@ var parser = (function () {
                     return $$[$0];
                     break;
                 case 2:
+                    this.$ = { type: 'function', args: $$[$0 - 2], body: $$[$0], name: $$[$0 - 4] };
+                    break;
+                case 3:
                     this.$ = $$[$0];
                     this.$.unshift($$[$0 - 2]);
                     break;
-                case 3:
+                case 4:
+                case 8:
                     this.$ = [$$[$0]];
                     break;
-                case 4:
+                case 5:
+                case 9:
                     this.$ = [];
                     break;
-                case 5:
-                    this.$ = { type: 'stmt', children: [$$[$0]] };
-                    break;
                 case 6:
-                    this.$ = { type: 'ret_stmt', children: [$$[$0]] };
+                    this.$ = yytext;
                     break;
                 case 7:
-                    this.$ = { type: 'block', children: [$$[$0 - 1]] };
+                    this.$ = $$[$0];
+                    this.$.unshift($$[$0 - 2]);
                     break;
-                case 8:
-                    this.$ = { type: 'if', children: [$$[$0 - 2], $$[$0]] };
-                    break;
-                case 9:
                 case 10:
-                    this.$ = { type: 'if_else', children: [$$[$0 - 4], $$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'stmt', children: [$$[$0]] };
                     break;
                 case 11:
+                    this.$ = { type: 'ret_stmt', children: [$$[$0]] };
+                    break;
+                case 12:
+                    this.$ = { type: 'block', children: [$$[$0 - 1]] };
+                    break;
                 case 13:
+                    this.$ = { type: 'if', children: [$$[$0 - 2], $$[$0]] };
+                    break;
+                case 14:
+                case 15:
+                    this.$ = { type: 'if_else', children: [$$[$0 - 4], $$[$0 - 2], $$[$0]] };
+                    break;
+                case 16:
+                case 18:
                     this.$ = $$[$0];
                     this.$.children.unshift($$[$0 - 2]);
                     break;
-                case 12:
+                case 17:
+                case 19:
                     this.$ = $$[$0];
                     this.$.children.unshift($$[$0 - 1]);
                     break;
-                case 14:
+                case 20:
                     this.$ = { type: 'statements', children: [$$[$0]] };
                     break;
-                case 15:
-                case 16:
-                    this.$ = { type: 'statements', children: [$$[$0 - 1]] };
-                    break;
-                case 17:
-                    this.$ = { type: 'statements', children: [] };
-                    break;
-                case 18:
-                    this.$ = '__' + yytext;
-                    break;
-                case 19:
-                    this.$ = { type: 'const', value: Number(yytext) };
-                    break;
-                case 20:
-                    this.$ = { type: 'const', value: 'true' };
-                    break;
                 case 21:
-                    this.$ = { type: 'const', value: 'false' };
+                    this.$ = { type: 'statements', children: [$$[$0 - 2]] };
                     break;
                 case 22:
-                    this.$ = { type: 'var', name: $$[$0] };
-                    break;
                 case 23:
-                    this.$ = { type: 'const', value: Math.PI };
-                    break;
                 case 24:
-                    this.$ = { type: 'const', value: Math.E };
+                    this.$ = { type: 'statements', children: [$$[$0 - 1]] };
                     break;
                 case 25:
-                    this.$ = { type: 'bracket', children: [$$[$0 - 1]] };
+                    this.$ = { type: 'statements', children: [] };
                     break;
                 case 26:
-                    this.$ = { type: 'plus', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = '__' + yytext;
                     break;
                 case 27:
-                    this.$ = { type: 'minus', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'const', value: Number(yytext) };
                     break;
                 case 28:
-                    this.$ = { type: 'mul', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'const', value: 'true' };
                     break;
                 case 29:
-                    this.$ = { type: 'div', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'const', value: 'false' };
                     break;
                 case 30:
-                    this.$ = { type: 'mod', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'var', name: $$[$0] };
                     break;
                 case 31:
-                    this.$ = { type: 'pow', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'const', value: Math.PI };
                     break;
                 case 32:
-                    this.$ = { type: 'uminus', children: [$$[$0]] };
+                    this.$ = { type: 'const', value: Math.E };
                     break;
                 case 33:
-                    this.$ = { type: 'gt', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'bracket', children: [$$[$0 - 1]] };
                     break;
                 case 34:
-                    this.$ = { type: 'gte', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'plus', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 35:
-                    this.$ = { type: 'lt', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'minus', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 36:
-                    this.$ = { type: 'lte', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'mul', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 37:
-                    this.$ = { type: 'eq', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'div', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 38:
-                    this.$ = { type: 'neq', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'mod', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 39:
-                    this.$ = { type: 'and', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'pow', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 40:
-                    this.$ = { type: 'not', children: [$$[$0]] };
+                    this.$ = { type: 'uminus', children: [$$[$0]] };
                     break;
                 case 41:
-                    this.$ = { type: 'or', children: [$$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'gt', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 42:
-                    this.$ = { type: 'tri', children: [$$[$0 - 4], $$[$0 - 2], $$[$0]] };
+                    this.$ = { type: 'gte', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 43:
-                    this.$ = { type: 'func', name: $$[$0 - 3], children: $$[$0 - 1] };
+                    this.$ = { type: 'lt', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 44:
-                    this.$ = { type: 'declare_assign', name: $$[$0 - 2], children: [$$[$0]] };
+                    this.$ = { type: 'lte', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 45:
-                    this.$ = { type: 'declare', name: $$[$0] };
+                    this.$ = { type: 'eq', children: [$$[$0 - 2], $$[$0]] };
                     break;
                 case 46:
+                    this.$ = { type: 'neq', children: [$$[$0 - 2], $$[$0]] };
+                    break;
+                case 47:
+                    this.$ = { type: 'and', children: [$$[$0 - 2], $$[$0]] };
+                    break;
+                case 48:
+                    this.$ = { type: 'not', children: [$$[$0]] };
+                    break;
+                case 49:
+                    this.$ = { type: 'or', children: [$$[$0 - 2], $$[$0]] };
+                    break;
+                case 50:
+                    this.$ = { type: 'tri', children: [$$[$0 - 4], $$[$0 - 2], $$[$0]] };
+                    break;
+                case 51:
+                    this.$ = { type: 'func', name: $$[$0 - 3], children: $$[$0 - 1] };
+                    break;
+                case 52:
+                    this.$ = { type: 'declare_assign', name: $$[$0 - 2], children: [$$[$0]] };
+                    break;
+                case 53:
+                    this.$ = { type: 'declare', name: $$[$0] };
+                    break;
+                case 54:
                     this.$ = { type: 'assign', name: $$[$0 - 2], children: [$$[$0]] };
                     break;
             }
         },
-        table: [{ 1: $V0, 3: 1, 4: 2, 6: 5, 8: 3, 9: $V1, 13: 4, 14: $V2, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 1: [3] }, { 1: [2, 1] }, o($V8, [2, 14], { 18: [1, 19], 19: [1, 20] }), o($V8, $V0, { 8: 3, 13: 4, 6: 5, 20: 11, 4: 21, 9: $V1, 14: $V2, 15: $V3, 18: [1, 22], 19: [1, 23], 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }), o($Vd, [2, 5], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }), { 6: 39, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 15: [1, 40] }, o($Vt, [2, 19]), o($Vt, [2, 20]), o($Vt, [2, 21]), o($Vt, [2, 22], { 45: [1, 41] }), o($Vt, [2, 23]), o($Vt, [2, 24]), { 6: 42, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 43, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 44, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, o($Vu, $Vv, { 15: [1, 45] }), { 20: 46, 21: [1, 47] }, o($V8, $V0, { 8: 3, 13: 4, 6: 5, 20: 11, 4: 48, 9: $V1, 14: $V2, 15: $V3, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }), o($V8, [2, 16]), o($V8, [2, 12]), o($V8, $V0, { 8: 3, 13: 4, 6: 5, 20: 11, 4: 49, 9: $V1, 14: $V2, 15: $V3, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }), o($V8, [2, 15]), { 6: 50, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 51, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 52, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 53, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 54, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 55, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 56, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 57, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 58, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 59, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 60, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 61, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 62, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 63, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 64, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, o($Vd, [2, 6], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }), { 6: 65, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 66, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 16: [1, 67], 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }, o($Vw, [2, 32], { 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($Vx, [2, 40], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp }), { 5: 68, 6: 69, 15: $V3, 16: $Vy, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, o($Vt, [2, 45], { 45: [1, 70] }), o($Vu, $Vv), o($V8, [2, 11]), o($V8, [2, 13]), o($Vw, [2, 26], { 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($Vw, [2, 27], { 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($Vz, [2, 28], { 32: $Vj }), o($Vz, [2, 29], { 32: $Vj }), o($Vz, [2, 30], { 32: $Vj }), o($Vt, [2, 31]), o($VA, [2, 33], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($VA, [2, 34], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($VA, [2, 35], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($VA, [2, 36], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($VA, [2, 37], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($VA, [2, 38], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj }), o($Vx, [2, 39], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp }), o([1, 7, 12, 16, 18, 19, 41, 42, 43], [2, 41], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq }), { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs, 43: [1, 71] }, { 16: [1, 72], 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }, o($VB, [2, 46], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }), o($Vt, [2, 25]), { 16: [1, 73] }, { 7: [1, 74], 16: [2, 3], 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }, { 6: 75, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 6: 76, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 10: 77, 11: $VC }, o($Vt, [2, 43]), { 5: 79, 6: 69, 15: $V3, 16: $Vy, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, o($VB, [2, 44], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }), o($VB, [2, 42], { 27: $Ve, 28: $Vf, 29: $Vg, 30: $Vh, 31: $Vi, 32: $Vj, 33: $Vk, 34: $Vl, 35: $Vm, 36: $Vn, 37: $Vo, 38: $Vp, 39: $Vq, 41: $Vr, 42: $Vs }), o($VD, [2, 8], { 17: [1, 80] }), { 4: 81, 6: 5, 8: 3, 9: $V1, 12: $V0, 13: 4, 14: $V2, 15: $V3, 20: 11, 21: $V4, 22: $V5, 23: $V6, 24: $V7, 25: $V8, 26: $V9, 28: $Va, 40: $Vb, 44: $Vc }, { 16: [2, 2] }, { 10: 82, 11: $VC, 13: 83, 14: $V2 }, { 12: [1, 84] }, o($VD, [2, 9]), o($VD, [2, 10]), o([1, 9, 12, 14, 15, 17, 18, 19, 21, 22, 23, 24, 25, 26, 28, 40, 44], [2, 7])],
-        defaultActions: { 2: [2, 1], 79: [2, 2] },
+        table: [{ 1: $V0, 3: 1, 4: 2, 5: 5, 6: $V1, 8: $V2, 13: $V3, 15: 6, 16: 3, 17: $V4, 20: 4, 21: $V5, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 1: [3] }, { 1: [2, 1] }, o($V3, [2, 20], { 23: [1, 21], 24: [1, 22] }), o($V3, $V0, { 16: 3, 20: 4, 5: 5, 15: 6, 25: 13, 4: 23, 6: $V1, 8: $V2, 13: $V3, 17: $V4, 21: $V5, 23: [1, 24], 24: [1, 25], 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }), o($V3, $V0, { 16: 3, 20: 4, 5: 5, 15: 6, 25: 13, 4: 26, 6: $V1, 8: $V2, 13: $V3, 17: $V4, 21: $V5, 24: [1, 27], 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }), o($Ve, [2, 10], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }), { 8: $V2, 13: $V3, 15: 43, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: [1, 44] }, { 7: 45, 13: $Vu }, o($Vv, [2, 27]), o($Vv, [2, 28]), o($Vv, [2, 29]), o($Vv, [2, 30], { 49: [1, 47] }), o($Vv, [2, 31]), o($Vv, [2, 32]), { 8: $V2, 13: $V3, 15: 48, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 49, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 50, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, o($Vw, $Vx, { 8: [1, 51] }), { 13: [1, 53], 25: 52 }, o($V3, $V0, { 16: 3, 20: 4, 5: 5, 15: 6, 25: 13, 4: 54, 6: $V1, 8: $V2, 13: $V3, 17: $V4, 21: $V5, 24: [1, 55], 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }), o($V3, [2, 24]), o($V3, [2, 17]), o($V3, $V0, { 16: 3, 20: 4, 5: 5, 15: 6, 25: 13, 4: 56, 6: $V1, 8: $V2, 13: $V3, 17: $V4, 21: $V5, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }), o($V3, [2, 22]), o($V3, [2, 19]), o($V3, [2, 23]), { 8: $V2, 13: $V3, 15: 57, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 58, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 59, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 60, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 61, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 62, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 63, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 64, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 65, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 66, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 67, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 68, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 69, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 70, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 71, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, o($Ve, [2, 11], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }), { 8: $V2, 13: $V3, 15: 72, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: [1, 73] }, o([8, 10, 12], [2, 6]), { 8: $V2, 13: $V3, 15: 74, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 10: [1, 75], 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }, o($Vy, [2, 40], { 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($Vz, [2, 48], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq }), { 8: $V2, 10: $VA, 13: $V3, 14: 76, 15: 77, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, o($Vv, [2, 53], { 49: [1, 78] }), o($Vw, $Vx), o($V3, [2, 16]), o($V3, [2, 21]), o($V3, [2, 18]), o($Vy, [2, 34], { 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($Vy, [2, 35], { 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($VB, [2, 36], { 36: $Vk }), o($VB, [2, 37], { 36: $Vk }), o($VB, [2, 38], { 36: $Vk }), o($Vv, [2, 39]), o($VC, [2, 41], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($VC, [2, 42], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($VC, [2, 43], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($VC, [2, 44], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($VC, [2, 45], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($VC, [2, 46], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk }), o($Vz, [2, 47], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq }), o([1, 10, 12, 19, 23, 24, 45, 46, 47], [2, 49], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr }), { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt, 47: [1, 79] }, { 10: [1, 80], 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }, { 7: 82, 9: 81, 10: $VD, 13: $Vu }, o($VE, [2, 54], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }), o($Vv, [2, 33]), { 10: [1, 83] }, { 10: [2, 8], 12: [1, 84], 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }, { 8: $V2, 13: $V3, 15: 85, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 8: $V2, 13: $V3, 15: 86, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 11: 87, 18: $VF }, { 10: [1, 89] }, { 10: [2, 4], 12: [1, 90] }, o($Vv, [2, 51]), { 8: $V2, 10: $VA, 13: $V3, 14: 91, 15: 77, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, o($VE, [2, 52], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }), o($VE, [2, 50], { 31: $Vf, 32: $Vg, 33: $Vh, 34: $Vi, 35: $Vj, 36: $Vk, 37: $Vl, 38: $Vm, 39: $Vn, 40: $Vo, 41: $Vp, 42: $Vq, 43: $Vr, 45: $Vs, 46: $Vt }), o($VG, [2, 13], { 22: [1, 92] }), { 4: 93, 5: 5, 6: $V1, 8: $V2, 13: $V3, 15: 6, 16: 3, 17: $V4, 19: $V0, 20: 4, 21: $V5, 25: 13, 26: $V6, 27: $V7, 28: $V8, 29: $V9, 30: $Va, 32: $Vb, 44: $Vc, 48: $Vd }, { 11: 94, 18: $VF }, { 7: 82, 9: 95, 10: $VD, 13: $Vu }, { 10: [2, 7] }, { 11: 96, 18: $VF, 20: 97, 21: $V5 }, { 19: [1, 98] }, o([1, 6, 8, 13, 17, 19, 21, 24, 26, 27, 28, 29, 30, 32, 44, 48], [2, 2]), { 10: [2, 3] }, o($VG, [2, 14]), o($VG, [2, 15]), o([1, 6, 8, 13, 17, 19, 21, 22, 23, 24, 26, 27, 28, 29, 30, 32, 44, 48], [2, 12])],
+        defaultActions: { 2: [2, 1], 91: [2, 7], 95: [2, 3] },
         parseError: function parseError(str, hash) {
             if (hash.recoverable) {
                 this.trace(str);
@@ -682,7 +699,7 @@ var parser = (function () {
                     case 0: /* skip whitespace */
                         break;
                     case 1:
-                        return 22;
+                        return 26;
                         break;
                     case 2:
                         return '(';
@@ -787,15 +804,18 @@ var parser = (function () {
                         return 'false';
                         break;
                     case 36:
-                        return 21;
+                        return 'func';
                         break;
                     case 37:
-                        return 19;
+                        return 13;
+                        break;
+                    case 38:
+                        return 24;
                         break;
                 }
             },
-            rules: [/^(?:\s+)/i, /^(?:[0-9]+(\.[0-9]+)?\b)/i, /^(?:\()/i, /^(?:\))/i, /^(?:\()/i, /^(?:\))/i, /^(?:\+)/i, /^(?:-)/i, /^(?:\*)/i, /^(?:\/)/i, /^(?:\^)/i, /^(?:PI\b)/i, /^(?:E\b)/i, /^(?:,)/i, /^(?:>=)/i, /^(?:>)/i, /^(?:<=)/i, /^(?:<)/i, /^(?:!==)/i, /^(?:==)/i, /^(?:&&)/i, /^(?:\|\|)/i, /^(?:!)/i, /^(?:\?)/i, /^(?::)/i, /^(?:%)/i, /^(?:let\b)/i, /^(?:;)/i, /^(?:=)/i, /^(?:return\b)/i, /^(?:if\b)/i, /^(?:else\b)/i, /^(?:\{)/i, /^(?:\})/i, /^(?:true\b)/i, /^(?:false\b)/i, /^(?:[\w\d]+)/i, /^(?:$)/i],
-            conditions: { "INITIAL": { "rules": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37], "inclusive": true } }
+            rules: [/^(?:\s+)/i, /^(?:[0-9]+(\.[0-9]+)?\b)/i, /^(?:\()/i, /^(?:\))/i, /^(?:\()/i, /^(?:\))/i, /^(?:\+)/i, /^(?:-)/i, /^(?:\*)/i, /^(?:\/)/i, /^(?:\^)/i, /^(?:PI\b)/i, /^(?:E\b)/i, /^(?:,)/i, /^(?:>=)/i, /^(?:>)/i, /^(?:<=)/i, /^(?:<)/i, /^(?:!==)/i, /^(?:==)/i, /^(?:&&)/i, /^(?:\|\|)/i, /^(?:!)/i, /^(?:\?)/i, /^(?::)/i, /^(?:%)/i, /^(?:let\b)/i, /^(?:;)/i, /^(?:=)/i, /^(?:return\b)/i, /^(?:if\b)/i, /^(?:else\b)/i, /^(?:\{)/i, /^(?:\})/i, /^(?:true\b)/i, /^(?:false\b)/i, /^(?:function\b)/i, /^(?:[\w\d]+)/i, /^(?:$)/i],
+            conditions: { "INITIAL": { "rules": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38], "inclusive": true } }
         });
         return lexer;
     })();
@@ -813,7 +833,6 @@ module.exports = parser;
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const parser = require("./parser");
-const functionMap = {};
 function build(exp, ...args) {
     let inArgs = [...args].map(arg => '__' + arg);
     let p = parser;
@@ -825,122 +844,156 @@ function build(exp, ...args) {
     // console.log(JSON.stringify(ast, null, 2));
     let code;
     if (ast.children.length == 1 && ast.children[0].type == 'stmt') {
-        code = 'return ' + compile(ast, inArgs.slice());
+        code = 'return ' + compile(ast, new context(inArgs.slice(), []));
     }
     else {
-        code = compile(ast, inArgs.slice());
+        code = compile(ast, new context(inArgs.slice(), []));
     }
     inArgs.push(code);
     return new Function(...inArgs);
 }
 exports.build = build;
-function compile(node, variableSet) {
+class context {
+    constructor(varList, funcList) {
+        this.varSet = {};
+        this.funcSet = {};
+        varList.forEach(v => this.varSet[v] = true);
+        funcList.forEach(v => this.funcSet[v] = true);
+    }
+    setVar(v) {
+        this.varSet[v] = true;
+    }
+    hasVar(v) {
+        return !!(this.varSet[v]) || (this.parent && this.parent.hasVar(v));
+    }
+    setFunc(v) {
+        this.funcSet[v] = true;
+    }
+    hasFunc(v) {
+        return !!(this.funcSet[v]) || (this.parent && this.parent.hasFunc(v));
+    }
+    fork() {
+        let c = new context([], []);
+        c.parent = this;
+        return c;
+    }
+}
+function compile(node, ctx) {
     switch (node.type) {
         case 'statements': {
-            return node.children.map(x => compile(x, variableSet)).join('\n');
+            return node.children.map(x => compile(x, ctx)).join('\n');
         }
         case 'stmt': {
-            return compile(node.children[0], variableSet) + ';';
+            if (node.children.length == 0) {
+                return '';
+            }
+            return compile(node.children[0], ctx) + ';';
         }
         case 'ret_stmt': {
-            return 'return ' + compile(node.children[0], variableSet) + ';';
+            return 'return ' + compile(node.children[0], ctx) + ';';
         }
         case 'block': {
-            return `{\n${compile(node.children[0], variableSet)}\n}`;
+            return `{\n${compile(node.children[0], ctx.fork())}\n}`;
         }
         case 'if': {
-            return `if(${compile(node.children[0], variableSet)})${compile(node.children[1], variableSet)}`;
+            return `if(${compile(node.children[0], ctx)})${compile(node.children[1], ctx)}`;
         }
         case 'if_else': {
-            return `if(${compile(node.children[0], variableSet)})${compile(node.children[1], variableSet)}else ${compile(node.children[2], variableSet)}`;
+            return `if(${compile(node.children[0], ctx)})${compile(node.children[1], ctx)}else ${compile(node.children[2], ctx)}`;
         }
         case 'declare': {
-            variableSet.push(node.name);
+            ctx.setVar(node.name);
             return `let ${node.name}`;
         }
         case 'assign': {
-            if (!(variableSet.indexOf(node.name) >= 0)) {
+            if (!(ctx.hasVar(node.name))) {
                 throw new Error("undefined variable " + node.name);
             }
-            return `${node.name}=${compile(node.children[0], variableSet)}`;
+            return `${node.name}=${compile(node.children[0], ctx)}`;
         }
         case 'declare_assign': {
-            variableSet.push(node.name);
-            return `let ${node.name}=${compile(node.children[0], variableSet)}`;
+            ctx.setVar(node.name);
+            return `let ${node.name}=${compile(node.children[0], ctx)}`;
         }
         case 'func': {
             let f = Math[node.name];
             if (f) {
-                return 'Math.' + node.name + '(' + node.children.map(x => compile(x, variableSet)).join(',') + ')';
+                return 'Math.' + node.name + '(' + node.children.map(x => compile(x, ctx)).join(',') + ')';
             }
-            f = functionMap[node.name];
+            f = ctx.hasFunc('__' + node.name);
             if (!f) {
                 throw new Error("Not support function " + node.name);
             }
-            return f + '(' + compile(node.children.map(x => compile(x, variableSet)).join(','), variableSet) + ')';
+            return '__' + node.name + '(' + node.children.map(x => compile(x, ctx)).join(',') + ')';
         }
         case 'const': {
             return node.value.toString();
         }
         case 'plus': {
-            return compile(node.children[0], variableSet) + '+' + compile(node.children[1], variableSet);
+            return compile(node.children[0], ctx) + '+' + compile(node.children[1], ctx);
         }
         case 'minus': {
-            return compile(node.children[0], variableSet) + '-' + compile(node.children[1], variableSet);
+            return compile(node.children[0], ctx) + '-' + compile(node.children[1], ctx);
         }
         case 'mul': {
-            return compile(node.children[0], variableSet) + '*' + compile(node.children[1], variableSet);
+            return compile(node.children[0], ctx) + '*' + compile(node.children[1], ctx);
         }
         case 'div': {
-            return compile(node.children[0], variableSet) + '/' + compile(node.children[1], variableSet);
+            return compile(node.children[0], ctx) + '/' + compile(node.children[1], ctx);
         }
         case 'uminus': {
-            return '-' + compile(node.children[0], variableSet);
+            return '-' + compile(node.children[0], ctx);
         }
         case 'pow': {
-            return 'Math.pow(' + compile(node.children[0], variableSet) + ',' + compile(node.children[1], variableSet) + ')';
+            return 'Math.pow(' + compile(node.children[0], ctx) + ',' + compile(node.children[1], ctx) + ')';
         }
         case 'var': {
-            if (!(variableSet.indexOf(node.name) >= 0)) {
+            if (!ctx.hasVar(node.name)) {
                 throw new Error("undefined variable " + node.name);
             }
             return node.name;
         }
         case 'lt': {
-            return `${compile(node.children[0], variableSet)}<${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}<${compile(node.children[1], ctx)}`;
         }
         case 'lte': {
-            return `${compile(node.children[0], variableSet)}<=${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}<=${compile(node.children[1], ctx)}`;
         }
         case 'gt': {
-            return `${compile(node.children[0], variableSet)}>${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}>${compile(node.children[1], ctx)}`;
         }
         case 'gte': {
-            return `${compile(node.children[0], variableSet)}>=${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}>=${compile(node.children[1], ctx)}`;
         }
         case 'eq': {
-            return `${compile(node.children[0], variableSet)}==${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}==${compile(node.children[1], ctx)}`;
         }
         case 'neq': {
-            return `${compile(node.children[0], variableSet)}!==${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}!==${compile(node.children[1], ctx)}`;
         }
         case 'and': {
-            return `${compile(node.children[0], variableSet)}&&${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}&&${compile(node.children[1], ctx)}`;
         }
         case 'or': {
-            return `${compile(node.children[0], variableSet)}||${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}||${compile(node.children[1], ctx)}`;
         }
         case 'not': {
-            return `!${compile(node.children[0], variableSet)}`;
+            return `!${compile(node.children[0], ctx)}`;
         }
         case 'tri': {
-            return `${compile(node.children[0], variableSet)}?${compile(node.children[1], variableSet)}:${compile(node.children[2], variableSet)}`;
+            return `${compile(node.children[0], ctx)}?${compile(node.children[1], ctx)}:${compile(node.children[2], ctx)}`;
         }
         case 'bracket': {
-            return `(${compile(node.children[0], variableSet)})`;
+            return `(${compile(node.children[0], ctx)})`;
         }
         case 'mod': {
-            return `${compile(node.children[0], variableSet)}%${compile(node.children[1], variableSet)}`;
+            return `${compile(node.children[0], ctx)}%${compile(node.children[1], ctx)}`;
+        }
+        case 'function': {
+            ctx.setFunc('__' + node.name);
+            let c = ctx.fork();
+            node.args.forEach(a => c.setVar('__' + a));
+            return `function __${node.name}(${node.args.map(a => '__' + a).join(',')})${compile(node.body, c)}`;
         }
         default: {
             throw new Error("Not support node type " + node.type);
