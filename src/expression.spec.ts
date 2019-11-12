@@ -38,7 +38,7 @@ test("functions should work", () => {
     build('min(0,1)')
 });
 
-test("should build",()=>{
+test("should build", () => {
     build(`let p;
 if (currentTime < 8071) {
 \tp = (18/5-currentTime*6/40355)*(progress-1)+1;
@@ -78,5 +78,31 @@ if (currentTime < 8071) {
 } else {
 \tp = 2*progress-1;
 }
-return -1.246334*cos(channel*0.125*PI)*max(0,p);`,'currentTime','progress','channel')
+return -1.246334*cos(channel*0.125*PI)*max(0,p);`, 'currentTime', 'progress', 'channel')
+});
+test('function should parse', () => {
+    let f = build(`
+    let s; let t = currentTime;
+function cquad(t1, s1, t2, s2) {
+\treturn (s2 - s1) * ((t - t1) / (t2 - t1))^2 + s1;
+}
+if (t < 5924) {
+\ts = 2.4;
+} else if (t < 18629) {
+\ts = cquad(5924, 2.4, 18629, 1);
+} else if (t < 20672) {
+\ts = cquad(18629, 1, 20672, 4);
+} else if (t < 99620) {
+\ts = 4;
+} else if (t < 102416) {
+\ts = 42644/699-t*2/3495;
+} else if (t < 107199) {
+\ts = 2.4;
+} else if (t < 109725) {
+\ts = cquad(109725, 4, 107199, 2.4);
+} else {
+\ts = 4;
+}
+return -1.246334*cos(channel*0.125*PI)*max(0,s*(progress-1)+1);
+    `, 'currentTime', 'channel', 'progress');
 });
